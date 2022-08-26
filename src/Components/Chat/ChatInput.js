@@ -4,7 +4,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import styled from "styled-components";
 import { auth, db } from "../../firebase";
 
-function ChatInput({ channelName, channelId }) {
+function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
   // const [user] = useAuthState(auth);
 
@@ -19,6 +19,10 @@ function ChatInput({ channelName, channelId }) {
       timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
       user: "Vishal Suvarna",
       userImage: "https://avatars.githubusercontent.com/u/105626822?v=4",
+    });
+
+    chatRef?.current?.scrollIntoView({
+      behavior: "smooth",
     });
 
     setInput("");
