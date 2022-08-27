@@ -1,14 +1,3 @@
-// import {
-//   AppsIcon,
-//   BookmarkBorderIcon,
-//   DraftsIcon,
-//   ExpandLessIcon,
-//   FileCopyIcon,
-//   InboxIcon,
-//   InsertCommentIcon,
-//   PeopleAltIcon,
-// } from "@mui/icons-material";
-
 import AddIcon from "@mui/icons-material/Add";
 import AppsIcon from "@mui/icons-material/Apps";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
@@ -23,13 +12,15 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import EditIcon from "@mui/icons-material/Edit";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 import styled from "styled-components";
-import { db } from "../../firebase";
+import { auth, db } from "../../firebase";
 import Options from "./Options";
 
 function Sidebar() {
   const [channels, loading, error] = useCollection(db.collection("rooms"));
+  const [user] = useAuthState(auth);
 
   return (
     <SidebarContainer>

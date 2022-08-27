@@ -3,15 +3,22 @@ import Avatar from "@mui/icons-material/AccountCircle";
 import HelpIcon from "@mui/icons-material/Help";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import styled from "styled-components";
+import { auth } from "../../firebase";
 
 function Header() {
+  const [user] = useAuthState(auth);
+
+  console.log(user);
   return (
     <HeaderContainer>
       {/* header left */}
       <HeaderLeft>
         <HeaderAvatar
-        // todo onclick
+          onClick={() => auth.signOut()}
+          alt={user?.displayName}
+          src={user?.photoURL}
         />
         <HeaderTimeIcon />
       </HeaderLeft>

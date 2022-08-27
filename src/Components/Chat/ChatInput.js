@@ -6,7 +6,7 @@ import { auth, db } from "../../firebase";
 
 function ChatInput({ channelName, channelId, chatRef }) {
   const [input, setInput] = useState("");
-  // const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth);
 
   const sendMessage = (e) => {
     e.preventDefault(); //prevent refresh
@@ -17,8 +17,8 @@ function ChatInput({ channelName, channelId, chatRef }) {
     db.collection("rooms").doc(channelId).collection("messages").add({
       message: input,
       timeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-      user: "Vishal Suvarna",
-      userImage: "https://avatars.githubusercontent.com/u/105626822?v=4",
+      user: user.displayName,
+      userImage: user.photoURL,
     });
 
     chatRef?.current?.scrollIntoView({

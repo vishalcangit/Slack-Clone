@@ -80,7 +80,7 @@ function Chat() {
 export default Chat;
 
 const ChatBottom = styled.div`
-  padding-bottom: 20px;
+  padding-bottom: 200px;
 `;
 const Header = styled.div`
   position: fixed;
