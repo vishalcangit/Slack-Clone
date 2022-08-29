@@ -1,4 +1,7 @@
 # Slack-Clone
+
+## Project link [Slack-Clone](https://slack-react-64aa6.web.app/).
+
 Developed a completely Front-End based Project trying to replicate Slack website.
 User needs to Sign-In to chat, user can also add a channel based on preferences.
 It shows the timestamp, user-name, user-image besides the message.
@@ -23,5 +26,4 @@ Technologies used- React, Redux, React-Router, Firebase, Styled-Components, Java
 ## This is a old channel with messages with other Users.
 ![Screenshot (40)](https://user-images.githubusercontent.com/105626822/187193917-30f9ceb3-3704-413d-85c6-19aec86d2308.png)
 
-
-Thank You for giving your valuable time..  :)
+# Thank You for giving your valuable time..  :)
